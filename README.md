@@ -1,7 +1,7 @@
 # Segmentation-Mask-from-CVAT-to-YOLO-format-
 Modified the Computer Vision Engineer's mask_to_poly.py code from: https://www.youtube.com/watch?v=aVKGjzAUHz0&amp;t=785s. To work with multiple classes instead of just 1. 
 
-Steps:
+# Steps:
 1. At around 10 minutes into the video he shows you how to export your data in Segmentation mask form. Do that.
 2. Once Downloaded Extract File from zip. (Pretty Simple)
 3. Put MaskToPoly.py (from here) into the same file as the files SegmentationClass and labelmap.txt
@@ -10,26 +10,26 @@ Steps:
 6. Once it is done running check the file called labels and the text files should look like 1 0.7808333333333334 0.805094130675526 0.7808333333333334 0.8073089700996677 0.7816666666666666. But Longer obviously.
 7. These are your labels for training.
 8. So do what he does in the video with the labels and copy and paste into labels->train(or val).
-9. For config: it should look like this 
-    path: /Users/Jacks/Downloads/detection/datasets
-    train: images/train 
-    val: images/train  
-    nc: 6
-    names: ['Fence','FloorObstacle', 'Rock', 'Tree','Car','Person']
+9. For config it should look like this 
+
+   path: /Users/Jacks/Downloads/detection/datasets
+   train: images/train 
+   val: images/train  
+   nc: 6
+   names: ['Fence','FloorObstacle', 'Rock', 'Tree','Car','Person']
+
 The main difference to his is changing the nc to the number of classes you have and listing out all the classes in the same order as it is in labelmap.txt, which is in the segmentation folder you downloaded.
-10. Train your model on epoch = 1 to see if it worked. To check look at the confusion matrix, batch, and val images.
-11. That's it. Hopefully, it works for you. If not. Oops sorry :(
+11. Train your model on epoch = 1 to see if it worked. To check look at the confusion matrix, batch, and val images.
+12. That's it. Hopefully, it works for you. If not. Oops sorry :(
 
-Also here is the segmentation code for running the model on a video. Not mine. This is from ultralytics. Just thought I would save you the time :) 
-
+# Also here is the segmentation code for running the model on a video. Not mine. This is from ultralytics. Just thought I would save you the time :) 
 import cv2
 from ultralytics import YOLO
 from ultralytics.utils.plotting import Annotator, colors
 import os
 import numpy as np
-
 model_path = os.path.join('.', 'runs', 'segment', 'train10', 'weights', 'last.pt') # This is the path to last.pt. He shows you how to do it in the video I believe. 
-# Load the YOLO model
+
 model = YOLO(model_path)
 names = model.model.names
 video_path = os.path.join('.', 'Record_2024-01-12-13-07-36.mp4') # this is the path to the video I used. Yours will probably be different. 
