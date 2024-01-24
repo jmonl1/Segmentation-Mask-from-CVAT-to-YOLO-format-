@@ -1,4 +1,4 @@
-![image](https://github.com/jmonl1/Segmentation-Mask-from-CVAT-to-YOLO-format-/assets/47769476/1320bc26-7199-4321-b1a1-75a93f18546a)# Segmentation-Mask-from-CVAT-to-YOLO-format-
+# Segmentation-Mask-from-CVAT-to-YOLO-format-
 Modified the Computer Vision Engineer's mask_to_poly.py code from: https://www.youtube.com/watch?v=aVKGjzAUHz0&amp;t=785s. To work with multiple classes instead of just 1. 
 
 # Steps:
