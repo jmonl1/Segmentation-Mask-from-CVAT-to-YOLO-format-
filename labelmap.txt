@@ -1,0 +1,8 @@
+# label:color_rgb:parts:actions
+Fence:32,224,128::
+FloorObstacle:92,4,197::
+Rock:160,224,224::
+Tree:144,96,0::
+background:0,0,0::
+car:32,128,192::
+person:192,96,96::
